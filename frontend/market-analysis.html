@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Analysis - E-Agriculture Assistance</title>
+    <link rel="stylesheet" href="css/market-analysis.css">
+
+</head>
+<body>
+<!-- Navigation Bar -->
+<header id="header">
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i>
+                E-Agriculture
+            </a>
+            <ul class="navbar" id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="dashboard.html" class="active">My Account</a></li>
+                <li><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<!-- Dashboard Section -->
+<section class="dashboard">
+    <div class="container">
+        <div class="dashboard-header">
+            <h1>Market Analysis</h1>
+            <p>Track market trends and make informed decisions</p>
+        </div>
+        
+        <div class="dashboard-grid">
+            <div class="dashboard-sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                    <li><a href="orders.html"><i class="fas fa-shopping-cart"></i> My Orders</a></li>
+                    <li><a href="saved-items.html"><i class="fas fa-heart"></i> Saved Items</a></li>
+                    <li><a href="market-analysis.html" class="active"><i class="fas fa-chart-line"></i> Market Analysis</a></li>
+                    <li><a href="weather-forecast.html"><i class="fas fa-cloud-sun"></i> Weather Forecast</a></li>
+                    <li><a href="crop-calendar.html"><i class="fas fa-seedling"></i> Crop Calendar</a></li>
+                    <li><a href="account-settings.html"><i class="fas fa-cog"></i> Account Settings</a></li>
+                    <li><a href="#" id="sidebar-logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+            
+            <div class="dashboard-content">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2>Price Trends</h2>
+                    </div>
+                    
+                    <div class="market-filters">
+                        <select class="filter-select" id="crop-select">
+                            <option value="all">All Crops</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="potatoes">Potatoes</option>
+                            <option value="onions">Onions</option>
+                            <option value="carrots">Carrots</option>
+                            <option value="rice">Rice</option>
+                        </select>
+                        
+                        <select class="filter-select" id="market-select">
+                            <option value="all">All Markets</option>
+                            <option value="kathmandu">Kathmandu</option>
+                            <option value="pokhara">Pokhara</option>
+                            <option value="biratnagar">Biratnagar</option>
+                            <option value="bharatpur">Bharatpur</option>
+                        </select>
+                        
+                        <select class="filter-select" id="time-select">
+                            <option value="week">Last Week</option>
+                            <option value="month" selected>Last Month</option>
+                            <option value="quarter">Last Quarter</option>
+                            <option value="year">Last Year</option>
+                        </select>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <div class="chart-placeholder">
+                            <div>
+                                <i class="fas fa-chart-line" style="font-size: 48px; margin-bottom: 15px;"></i>
+                                <p>Price trend chart will be displayed here</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card-header">
+                        <h2>Current Market Prices</h2>
+                    </div>
+                    
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Crop</th>
+                                <th>Current Price</th>
+                                <th>Change (30 days)</th>
+                                <th>Market</th>
+                                <th>Last Updated</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tomatoes</td>
+                                <td>₹390/kg</td>
+                                <td><span class="price-change price-up"><i class="fas fa-arrow-up"></i> 5.2%</span></td>
+                                <td>Kathmandu</td>
+                                <td>Today</td>
+                            </tr>
+                            <tr>
+                                <td>Potatoes</td>
+                                <td>₹195/kg</td>
+                                <td><span class="price-change price-down"><i class="fas fa-arrow-down"></i> 2.1%</span></td>
+                                <td>Pokhara</td>
+                                <td>Today</td>
+                            </tr>
+                            <tr>
+                                <td>Onions</td>
+                                <td>₹170/kg</td>
+                                <td><span class="price-change price-up"><i class="fas fa-arrow-up"></i> 3.7%</span></td>
+                                <td>Biratnagar</td>
+                                <td>Yesterday</td>
+                            </tr>
+                            <tr>
+                                <td>Carrots</td>
+                                <td>₹260/kg</td>
+                                <td><span class="price-change price-up"><i class="fas fa-arrow-up"></i> 1.5%</span></td>
+                                <td>Kathmandu</td>
+                                <td>Today</td>
+                            </tr>
+                            <tr>
+                                <td>Rice</td>
+                                <td>₹85/kg</td>
+                                <td><span class="price-change price-up"><i class="fas fa-arrow-up"></i> 1.2%</span></td>
+                                <td>Bharatpur</td>
+                                <td>Yesterday</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2>Market Insights</h2>
+                    </div>
+                    
+                    <div class="market-insights">
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <div class="insight-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="insight-title">Tomato Price Surge</div>
+                            </div>
+                            <div class="insight-content">
+                                <p>Tomato prices have increased by 5.2% in the last month due to unseasonal rainfall affecting crops in major growing regions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <div class="insight-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="insight-title">Potato Surplus</div>
+                            </div>
+                            <div class="insight-content">
+                                <p>Potato prices are expected to remain stable or decrease further due to bumper harvest in the eastern regions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <div class="insight-icon">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                                <div class="insight-title">Market Forecast</div>
+                            </div>
+                            <div class="insight-content">
+                                <p>Vegetable prices are expected to stabilize in the coming weeks as weather conditions improve and supply chains normalize.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-outline">Download Report</button>
+                        <button class="btn">Set Price Alert</button>
+                    </div>
+                </div>
+                
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2>Supply & Demand Analysis</h2>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <div class="chart-placeholder">
+                            <div>
+                                <i class="fas fa-balance-scale" style="font-size: 48px; margin-bottom: 15px;"></i>
+                                <p>Supply and demand chart will be displayed here</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="market-insights">
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <div class="insight-icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <div class="insight-title">Supply Forecast</div>
+                            </div>
+                            <div class="insight-content">
+                                <p>Based on current planting patterns and weather forecasts, vegetable supply is expected to increase by 15% in the next quarter.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="insight-card">
+                            <div class="insight-header">
+                                <div class="insight-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <div class="insight-title">Demand Trends</div>
+                            </div>
+                            <div class="insight-content">
+                                <p>Consumer demand for organic produce continues to grow, with a 20% increase in organic vegetable sales compared to last year.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>E-Agriculture</h3>
+                <p>Your one-stop platform for the latest updates on vegetable prices and grocery items relevant to farmers.</p>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="index.html#products"><i class="fas fa-chevron-right"></i> Products</a></li>
+                    <li><a href="index.html#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html#price-tracking"><i class="fas fa-chevron-right"></i> Price Tracking</a></li>
+                    <li><a href="services.html#market-analysis"><i class="fas fa-chevron-right"></i> Market Analysis</a></li>
+                    <li><a href="services.html#farmer-community"><i class="fas fa-chevron-right"></i> Farmer Community</a></li>
+                    <li><a href="services.html#agricultural-tips"><i class="fas fa-chevron-right"></i> Agricultural Tips</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for the latest updates and offers</p>
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 E-Agriculture Assistance. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('navbar').classList.toggle('active');
+        const icon = this.querySelector('i');
+        if (icon.classList.contains('fa-bars')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Check if user is logged in
+    window.addEventListener('DOMContentLoaded', () => {
+        const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+        if (!isLoggedIn) {
+            // Redirect to login page if not logged in
+            window.location.href = 'login.html';
+        }
+    });
+    
+    // Logout functionality
+    function handleLogout() {
+        localStorage.removeItem('loggedIn');
+        localStorage.removeItem('userName');
+        window.location.href = 'login.html';
+    }
+    
+    document.getElementById('logout-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        handleLogout();
+    });
+    
+    document.getElementById('sidebar-logout').addEventListener('click', function(e) {
+        e.preventDefault();
+        handleLogout();
+    });
+    
+    // Filter change handlers
+    document.getElementById('crop-select').addEventListener('change', function() {
+        // Here you would typically update the chart and data based on the selected crop
+        console.log('Selected crop:', this.value);
+    });
+    
+    document.getElementById('market-select').addEventListener('change', function() {
+        // Here you would typically update the chart and data based on the selected market
+        console.log('Selected market:', this.value);
+    });
+    
+    document.getElementById('time-select').addEventListener('change', function() {
+        // Here you would typically update the chart and data based on the selected time period
+        console.log('Selected time period:', this.value);
+    });
+</script>
+</body>
+</html>

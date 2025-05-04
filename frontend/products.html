@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - E-Agriculture Assistance</title>
+    <link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-leaf"></i>
+                    E-Agriculture
+                </a>
+                <ul class="navbar" id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="login.html" id="open-login">Login</a></li>
+                </ul>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Products</h1>
+            <p>Explore our wide range of high-quality agricultural products at competitive prices</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="search-container">
+                <form class="search-bar">
+                    <input type="text" class="search-input" placeholder="Search products...">
+                    <button type="submit" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Products Header -->
+            <div class="products-header">
+                <div>
+                    <h2>All Products</h2>
+                    <p class="products-count">Showing 12 of 36 products</p>
+                </div>
+            </div>
+            
+            <!-- Filter and Sort -->
+            <div class="filter-sort-container">
+                <div class="filter-options">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Seeds</button>
+                    <button class="filter-btn">Fertilizers</button>
+                    <button class="filter-btn">Tools</button>
+                    <button class="filter-btn">Pesticides</button>
+                    <button class="filter-btn">Vegetables</button>
+                    <button class="filter-btn">Fruits</button>
+                </div>
+                <div class="sort-options">
+                    <label for="sort-select">Sort by:</label>
+                    <select id="sort-select" class="sort-select">
+                        <option value="popularity">Popularity</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Product Grid -->
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1671395501275-630ae5ea02c4?q=80&w=3077&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fresh Tomatoes">
+                        <span class="product-badge">Popular</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Fresh Tomatoes</h3>
+                        <p>Locally grown organic tomatoes</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rs. 390/kg</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="product-details.html?id=1" class="btn btn-outline">View Details</a>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Russet Potatoes">
+                    </div>
+                    <div class="product-info">
+                        <h3>Russet Potatoes</h3>
+                        <p>Premium quality potatoes</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rs. 195/kg</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="product-details.html?id=2" class="btn btn-outline">View Details</a>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Organic Carrots">
+                    </div>
+                    <div class="product-info">
+                        <h3>Organic Carrots</h3>
+                        <p>Fresh and nutritious carrots</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rs. 260/kg</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="product-details.html?id=3" class="btn btn-outline">View Details</a>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1729292933757-5e9d9e8d4ead?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Red Onions">
+                    </div>
+                    <div class="product-info">
+                        <h3>Red Onions</h3>
+                        <p>Sweet and flavorful onions</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rs. 170/kg</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="product-details.html?id=4" class="btn btn-outline">View Details</a>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1675731117950-089d3b3325d7?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Green Bell Peppers">
+                    </div>
+                    <div class="product-info">
+                        <h3>Green Bell Peppers</h3>
+                        <p>Fresh and crisp bell peppers</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rs. 280/kg</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="product-details.html?id=5" class="btn btn-outline">View Details</a>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1604977042946-1eecc30f269e?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Organic Cucumber">
+                        <span class="product-badge">New</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Organic Cucumber</h3>
+                        <p>Fresh and hydrating cucumbers</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rs. 210/kg</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.3</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="product-details.html?id=6" class="btn btn-outline">View Details</a>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1621387712013-7925d3e59185?q=80&w=2960&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Organic Spinach">
+                    </div>
+                    <div class="product-info">
+                        <h3>Organic Spinach</h3>
+                        <p>Fresh and nutritious leafy greens</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rs. 150/bunch</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.7</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="product-details.html?id=7" class="btn btn-outline">View Details</a>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1675731118551-79b3da05a5d4?q=80&w=3027&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Organic Garlic">
+                    </div>
+                    <div class="product-info">
+                        <h3>Organic Garlic</h3>
+                        <p>Flavorful and aromatic garlic</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rs. 240/kg</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="product-details.html?id=8" class="btn btn-outline">View Details</a>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 9 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1675364893053-180a3c6e0119?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Organic Ginger">
+                        <span class="product-badge">Sale</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Organic Ginger</h3>
+                        <p>Fresh and aromatic ginger root</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rs. 320/kg</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="product-details.html?id=9" class="btn btn-outline">View Details</a>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 10 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1692956706779-576c151ec712?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Organic Cauliflower">
+                    </div>
+                    <div class="product-info">
+                        <h3>Organic Cauliflower</h3>
+                        <p>Fresh and crisp cauliflower</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rs. 180/piece</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="product-details.html?id=10" class="btn btn-outline">View Details</a>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 11 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1683543122945-513029986574?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Organic Eggplant">
+                    </div>
+                    <div class="product-info">
+                        <h3>Organic Eggplant</h3>
+                        <p>Fresh and tender eggplants</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rs. 220/kg</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.3</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="product-details.html?id=11" class="btn btn-outline">View Details</a>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 12 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?q=80&w=3085&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Organic Cabbage">
+                    </div>
+                    <div class="product-info">
+                        <h3>Organic Cabbage</h3>
+                        <p>Fresh and crisp green cabbage</p>
+                        <div class="product-meta">
+                            <span class="product-price">Rs. 160/piece</span>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="product-details.html?id=12" class="btn btn-outline">View Details</a>
+                            <button class="btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination">
+                <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+                <button class="pagination-btn active">1</button>
+                <button class="pagination-btn">2</button>
+                <button class="pagination-btn">3</button>
+                <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>E-Agriculture</h3>
+                    <p>Your one-stop platform for the latest updates on vegetable prices and grocery items relevant to farmers.</p>
+                    <ul class="social-links">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="index.html#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="products.html"><i class="fas fa-chevron-right"></i> Products</a></li>
+                        <li><a href="index.html#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="login.html" id="footer-login-link"><i class="fas fa-chevron-right"></i> Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#" class="service-link" data-service="price-tracking"><i class="fas fa-chevron-right"></i> Price Tracking</a></li>
+                        <li><a href="#" class="service-link" data-service="market-analysis"><i class="fas fa-chevron-right"></i> Market Analysis</a></li>
+                        <li><a href="#" class="service-link" data-service="farmer-community"><i class="fas fa-chevron-right"></i> Farmer Community</a></li>
+                        <li><a href="#" class="service-link" data-service="agricultural-tips"><i class="fas fa-chevron-right"></i> Agricultural Tips</a></li>
+                        <li><a href="#" class="service-link" data-service="weather-updates"><i class="fas fa-chevron-right"></i> Weather Updates</a></li>
+                        <li><a href="#" class="service-link" data-service="supply-chain"><i class="fas fa-chevron-right"></i> Supply Chain</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and offers</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 E-Agriculture Assistance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            document.getElementById('navbar').classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Check login state
+        window.addEventListener('DOMContentLoaded', () => {
+            const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+            const loginLink = document.getElementById('open-login');
+            const footerLoginLink = document.getElementById('footer-login-link');
+
+            // Handle service links
+            document.querySelectorAll('.service-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const service = this.getAttribute('data-service');
+                    
+                    if (isLoggedIn) {
+                        window.location.href = `services.html#${service}`;
+                    } else {
+                        // Store the service they were trying to access
+                        localStorage.setItem('requestedService', service);
+                        window.location.href = 'login.html';
+                    }
+                });
+            });
+
+            if (isLoggedIn) {
+                // Change login to account and redirect to dashboard.html
+                loginLink.textContent = 'My Account';
+                loginLink.href = 'dashboard.html';
+                
+                // Also update footer login link
+                if (footerLoginLink) {
+                    footerLoginLink.textContent = 'My Account';
+                    footerLoginLink.href = 'dashboard.html';
+                }
+                
+                // Add logout button
+                const logoutBtn = document.createElement('li');
+                const logoutLink = document.createElement('a');
+                logoutLink.textContent = 'Logout';
+                logoutLink.href = '#';
+                logoutLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    localStorage.removeItem('loggedIn'); // Clear login state
+                    localStorage.removeItem('userName'); // Clear user name
+                    window.location.reload(); // Reload page
+                });
+                logoutBtn.appendChild(logoutLink);
+                document.querySelector('.navbar').appendChild(logoutBtn);
+            }
+        });
+        
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Here you would typically filter the products based on the selected category
+                // For demo purposes, we'll just show an alert
+                const category = this.textContent;
+                if (category !== 'All') {
+                    alert(`Filtering products by: ${category}`);
+                }
+            });
+        });
+        
+        // Sort functionality
+        document.getElementById('sort-select').addEventListener('change', function() {
+            const sortBy = this.value;
+            // Here you would typically sort the products based on the selected option
+            // For demo purposes, we'll just show an alert
+            alert(`Sorting products by: ${sortBy}`);
+        });
+        
+        // Search functionality
+        document.querySelector('.search-bar').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const searchTerm = this.querySelector('.search-input').value;
+            // Here you would typically search the products based on the search term
+            // For demo purposes, we'll just show an alert
+            alert(`Searching for: ${searchTerm}`);
+        });
+        
+        // Pagination functionality
+        document.querySelectorAll('.pagination-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                if (!this.classList.contains('active')) {
+                    document.querySelectorAll('.pagination-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                    // Here you would typically load the corresponding page of products
+                    // For demo purposes, we'll just show an alert
+                    if (this.textContent) {
+                        alert(`Loading page ${this.textContent}`);
+                    }
+                }
+            });
+        });
+        
+        // Add to Cart functionality
+        document.querySelectorAll('.product-actions .btn:not(.btn-outline)').forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.closest('.product-card').querySelector('h3').textContent;
+                alert(`${productName} added to cart!`);
+            });
+        });
+    </script>
+</body>
+</html>

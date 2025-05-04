@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Activity - E-Agriculture Assistance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --primary-dark: #388E3C;
+            --secondary-color: #8BC34A;
+            --accent-color: #FF9800;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #757575;
+            --white: #ffffff;
+            --section-padding: 80px 0;
+            --success: #4CAF50;
+            --warning: #FF9800;
+            --danger: #F44336;
+            --info: #2196F3;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html, body {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+        
+        body {
+            background-color: var(--light-gray);
+            color: var(--text-color);
+            line-height: 1.6;
+            width: 100%;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+        
+        .navbar {
+            display: flex;
+            list-style: none;
+        }
+        
+        .navbar li {
+            margin-left: 30px;
+        }
+        
+        .navbar a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .navbar a:hover, .navbar a.active {
+            color: var(--primary-color);
+        }
+        
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .navbar a:hover::after, .navbar a.active::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+        
+        /* Dashboard Layout */
+        .dashboard {
+            padding-top: 100px;
+            padding-bottom: 60px;
+            min-height: 100vh;
+        }
+        
+        .dashboard-header {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .dashboard-header h1 {
+            font-size: 24px;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        
+        .dashboard-header p {
+            color: var(--dark-gray);
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+        
+        .dashboard-sidebar {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .sidebar-menu {
+            list-style: none;
+        }
+        
+        .sidebar-menu li {
+            margin-bottom: 15px;
+        }
+        
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-color);
+            padding: 12px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-menu a:hover, .sidebar-menu a.active {
+            background-color: var(--light-gray);
+            color: var(--primary-color);
+        }
+        
+        .sidebar-menu a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .dashboard-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .dashboard-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 30px;
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .card-header h2 {
+            font-size: 24px;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+        
+        .card-header a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+        }
+        
+        .card-header a:hover {
+            color: var(--primary-dark);
+        }
+        
+        .card-header a i {
+            margin-left: 5px;
+        }
+        
+        /* Activity Log Specific Styles */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
+            background-color: var(--light-gray);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            padding: 8px 15px;
+            background-color: var(--white);
+            border: 1px solid var(--medium-gray);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+        
+        .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .filter-btn.active:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .date-filter {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .date-filter label {
+            font-weight: 500;
+        }
+        
+        .date-filter input {
+            padding: 8px 15px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 5px;
+            background-color: var(--white);
+        }
+        
+        .activity-list {
+            margin-bottom: 20px;
+        }
+        
+        .activity-item {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid var(--medium-gray);
+            transition: all 0.3s;
+            border-radius: 8px;
+        }
+        
+        .activity-item:hover {
+            background-color: var(--light-gray);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+        
+        .activity-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(76, 175, 80, 0.1);
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            flex-shrink: 0;
+            font-size: 20px;
+        }
+        
+        .activity-icon.warning {
+            background-color: rgba(255, 152, 0, 0.1);
+            color: var(--warning);
+        }
+        
+        .activity-icon.danger {
+            background-color: rgba(244, 67, 54, 0.1);
+            color: var(--danger);
+        }
+        
+        .activity-icon.info {
+            background-color: rgba(33, 150, 243, 0.1);
+            color: var(--info);
+        }
+        
+        .activity-details {
+            flex: 1;
+        }
+        
+        .activity-details h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+        
+        .activity-details p {
+            color: var(--dark-gray);
+            font-size: 14px;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 5px;
+        }
+        
+        .pagination-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--medium-gray);
+            border-radius: 5px;
+            background-color: var(--white);
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .pagination-btn:hover {
+            background-color: var(--light-gray);
+        }
+        
+        .pagination-btn.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+        
+        .btn-sm {
+            padding: 8px 15px;
+            font-size: 14px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            display: none;
+        }
+        
+        .empty-state i {
+            font-size: 48px;
+            color: var(--medium-gray);
+            margin-bottom: 20px;
+        }
+        
+        .empty-state h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .empty-state p {
+            color: var(--dark-gray);
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2E7D32;
+            color: var(--white);
+            padding: 60px 0 30px;
+            margin-top: 60px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-links {
+            display: flex;
+            list-style: none;
+            margin-top: 20px;
+        }
+        
+        .social-links li {
+            margin-right: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .dashboard-sidebar {
+                position: relative;
+                top: 0;
+                margin-bottom: 30px;
+            }
+            
+            .filter-bar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .date-filter {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transition: left 0.3s;
+                z-index: 999;
+            }
+            
+            .navbar.active {
+                left: 0;
+            }
+            
+            .navbar li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .action-buttons .btn {
+                width: 100%;
+            }
+            
+            .activity-item {
+                padding: 15px;
+            }
+            
+            .activity-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+                margin-right: 15px;
+            }
+            
+            .activity-details h4 {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .filter-options {
+                width: 100%;
+                overflow-x: auto;
+                padding-bottom: 10px;
+                -webkit-overflow-scrolling: touch;
+                display: flex;
+                flex-wrap: nowrap;
+            }
+            
+            .filter-btn {
+                white-space: nowrap;
+            }
+            
+            .date-filter {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .date-filter input {
+                width: 100%;
+            }
+            
+            .date-filter .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation Bar -->
+<header id="header">
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i>
+                E-Agriculture
+            </a>
+            <ul class="navbar" id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="dashboard.html" class="active">My Account</a></li>
+                <li><a href="#" id="logout-btn">Logout</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<!-- Dashboard Section -->
+<section class="dashboard">
+    <div class="container">
+        <div class="dashboard-header">
+            <h1>Account Activity Log</h1>
+            <p>View and monitor all activities on your account</p>
+        </div>
+        
+        <div class="dashboard-grid">
+            <div class="dashboard-sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+                    <li><a href="orders.html"><i class="fas fa-shopping-cart"></i> My Orders</a></li>
+                    <li><a href="saved-items.html"><i class="fas fa-heart"></i> Saved Items</a></li>
+                    <li><a href="market-analysis.html"><i class="fas fa-chart-line"></i> Market Analysis</a></li>
+                    <li><a href="weather-forecast.html"><i class="fas fa-cloud-sun"></i> Weather Forecast</a></li>
+                    <li><a href="crop-calendar.html"><i class="fas fa-seedling"></i> Crop Calendar</a></li>
+                    <li><a href="account-settings.html" class="active"><i class="fas fa-cog"></i> Account Settings</a></li>
+                    <li><a href="#" id="sidebar-logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </div>
+            
+            <div class="dashboard-content">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h2>Recent Activity</h2>                       
+                    </div>
+                    
+                    <div class="filter-bar">
+                        <div class="filter-options">
+                            <button class="filter-btn active" data-filter="all">All Activity</button>
+                            <button class="filter-btn" data-filter="order">Orders</button>
+                            <button class="filter-btn" data-filter="message">Messages</button>
+                            <button class="filter-btn" data-filter="alert">Alerts</button>
+                            <button class="filter-btn" data-filter="reminder">Reminders</button>
+                        </div>
+                        <div class="date-filter">
+                            <label>Date Range:</label>
+                            <input type="date" id="start-date" value="2025-04-01">
+                            <span>to</span>
+                            <input type="date" id="end-date" value="2025-04-24">
+                            <button class="btn btn-sm" id="apply-date-filter">Apply</button>
+                        </div>
+                    </div>
+                    
+                    <div class="activity-list" id="activity-list">
+                        <!-- Order Activity -->
+                        <div class="activity-item" data-type="order">
+                            <div class="activity-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>You placed an order for 50kg of fertilizer</h4>
+                                <p>Today, 10:30 AM</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Message Activity -->
+                        <div class="activity-item" data-type="message">
+                            <div class="activity-icon info">
+                                <i class="fas fa-comment"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>You received a reply to your question about pest control</h4>
+                                <p>Yesterday, 3:45 PM</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Price Alert Activity -->
+                        <div class="activity-item" data-type="alert">
+                            <div class="activity-icon warning">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Price alert: Tomato prices have increased by 5.2%</h4>
+                                <p>Yesterday, 9:15 AM</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Reminder Activity -->
+                        <div class="activity-item" data-type="reminder">
+                            <div class="activity-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Reminder: Agricultural workshop tomorrow at 11:00 AM</h4>
+                                <p>2 days ago, 2:30 PM</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Login Activity -->
+                        <div class="activity-item" data-type="security">
+                            <div class="activity-icon">
+                                <i class="fas fa-sign-in-alt"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Account Login</h4>
+                                <p>3 days ago, 10:45 AM</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Weather Alert Activity -->
+                        <div class="activity-item" data-type="alert">
+                            <div class="activity-icon warning">
+                                <i class="fas fa-cloud-rain"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Weather alert: Heavy rainfall expected in your region</h4>
+                                <p>3 days ago, 8:20 AM</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Settings Update Activity -->
+                        <div class="activity-item" data-type="security">
+                            <div class="activity-icon">
+                                <i class="fas fa-cog"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>You updated your notification preferences</h4>
+                                <p>4 days ago, 11:30 AM</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Market Analysis Activity -->
+                        <div class="activity-item" data-type="alert">
+                            <div class="activity-icon info">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Market analysis report for April is now available</h4>
+                                <p>5 days ago, 9:00 AM</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Saved Item Activity -->
+                        <div class="activity-item" data-type="order">
+                            <div class="activity-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>You saved "Organic Tomato Seeds" to your favorites</h4>
+                                <p>6 days ago, 2:45 PM</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Failed Login Activity -->
+                        <div class="activity-item" data-type="security">
+                            <div class="activity-icon danger">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="activity-details">
+                                <h4>Failed Login Attempt</h4>
+                                <p>1 week ago, 8:15 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Empty state (hidden by default) -->
+                    <div class="empty-state" id="empty-state">
+                        <i class="fas fa-history"></i>
+                        <h3>No activities found</h3>
+                        <p>There are no activities matching your current filters.</p>
+                        <button class="btn btn-sm" id="reset-filters">Reset Filters</button>
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="pagination-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-outline" id="export-log">Export Activity Log</button>
+                        <button class="btn" id="clear-history">Clear Activity History</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>E-Agriculture</h3>
+                <p>Your one-stop platform for the latest updates on vegetable prices and grocery items relevant to farmers.</p>
+                <ul class="social-links">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="index.html#products"><i class="fas fa-chevron-right"></i> Products</a></li>
+                    <li><a href="index.html#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="login.html"><i class="fas fa-chevron-right"></i> Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html#price-tracking"><i class="fas fa-chevron-right"></i> Price Tracking</a></li>
+                    <li><a href="services.html#market-analysis"><i class="fas fa-chevron-right"></i> Market Analysis</a></li>
+                    <li><a href="services.html#farmer-community"><i class="fas fa-chevron-right"></i> Farmer Community</a></li>
+                    <li><a href="services.html#agricultural-tips"><i class="fas fa-chevron-right"></i> Agricultural Tips</a></li>
+                    <li><a href="services.html#weather-updates"><i class="fas fa-chevron-right"></i> Weather Updates</a></li>
+                    <li><a href="services.html#supply-chain"><i class="fas fa-chevron-right"></i> Supply Chain</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for the latest updates and offers</p>
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 E-Agriculture Assistance. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+        document.getElementById('navbar').classList.toggle('active');
+        const icon = this.querySelector('i');
+        if (icon.classList.contains('fa-bars')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // Check if user is logged in
+    window.addEventListener('DOMContentLoaded', () => {
+        const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+        if (!isLoggedIn) {
+            // Redirect to login page if not logged in
+            window.location.href = 'login.html';
+        }
+    });
+    
+    // Logout functionality
+    function handleLogout() {
+        localStorage.removeItem('loggedIn');
+        localStorage.removeItem('userName');
+        window.location.href = 'login.html';
+    }
+    
+    document.getElementById('logout-btn').addEventListener('click', function(e) {
+        e.preventDefault();
+        handleLogout();
+    });
+    
+    document.getElementById('sidebar-logout').addEventListener('click', function(e) {
+        e.preventDefault();
+        handleLogout();
+    });
+    
+    // Filter buttons functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const activityItems = document.querySelectorAll('.activity-item');
+    const emptyState = document.getElementById('empty-state');
+    const activityList = document.getElementById('activity-list');
+    
+    // Filter activities based on type
+    function filterActivities(filterType) {
+        let visibleCount = 0;
+        
+        activityItems.forEach(item => {
+            if (filterType === 'all' || item.getAttribute('data-type') === filterType) {
+                item.style.display = 'flex';
+                visibleCount++;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        
+        // Show empty state if no activities match the filter
+        if (visibleCount === 0) {
+            emptyState.style.display = 'block';
+            activityList.style.borderBottom = 'none';
+        } else {
+            emptyState.style.display = 'none';
+            activityList.style.borderBottom = '1px solid var(--medium-gray)';
+        }
+    }
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            filterActivities(this.getAttribute('data-filter'));
+        });
+    });
+    
+    // Reset filters
+    document.getElementById('reset-filters').addEventListener('click', function() {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        document.querySelector('[data-filter="all"]').classList.add('active');
+        filterActivities('all');
+    });
+    
+    // Date filter functionality
+    document.getElementById('apply-date-filter').addEventListener('click', function() {
+        // In a real application, this would filter based on the selected dates
+        alert('Date filter applied. This would filter activities between the selected dates.');
+    });
+    
+    // Export log functionality
+    document.getElementById('export-log').addEventListener('click', function() {
+        alert('Activity log would be exported as CSV or PDF file.');
+    });
+    
+    // Clear history functionality
+    document.getElementById('clear-history').addEventListener('click', function() {
+        if (confirm('Are you sure you want to clear all activity history? This action cannot be undone.')) {
+            alert('Activity history cleared successfully.');
+            // In a real application, this would clear the activity history
+        }
+    });
+    
+    // Pagination functionality
+    const paginationButtons = document.querySelectorAll('.pagination-btn');
+    paginationButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            if (!this.classList.contains('active')) {
+                paginationButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                // In a real application, this would load the corresponding page of activities
+            }
+        });
+    });
+</script>
+</body>
+</html>
